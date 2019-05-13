@@ -19,7 +19,7 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 
-public class Controller {
+public class HorseController {
     public static Horse userHorse;
     @FXML
     private AnchorPane rootPane;
@@ -48,6 +48,10 @@ public class Controller {
         window.setScene(horseStuff);
 
 
+    }
+    @FXML
+    public void BirdScene(ActionEvent event) throws Exception{
+        BirdScene(event);
     }
     @FXML
     public void HorseEat(ActionEvent event) throws Exception {

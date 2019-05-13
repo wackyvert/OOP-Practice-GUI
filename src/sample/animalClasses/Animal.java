@@ -12,4 +12,5 @@ public class Animal  {
         System.out.println("I am going to sleep, goodnight.");
         System.out.println("Good morning!");
     }
+
 }

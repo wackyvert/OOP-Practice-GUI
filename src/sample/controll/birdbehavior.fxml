@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controll.HorseController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controll.BirdControl">
    <children>
       <GridPane alignment="CENTER" layoutY="7.0" prefHeight="173.0" prefWidth="601.0">
         <columnConstraints>
@@ -16,11 +16,13 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#HorseEat" prefHeight="33.0" prefWidth="106.0" text="Eat" />
-            <Button mnemonicParsing="false" onAction="#HorseSleep" prefHeight="30.0" prefWidth="216.0" text="Sleep" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#HorseWalk" prefHeight="34.0" prefWidth="117.0" text="Walk" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#BirdEat" prefHeight="33.0" prefWidth="106.0" text="Eat" />
+            <Button mnemonicParsing="false" onAction="#BirdSleep" prefHeight="30.0" prefWidth="216.0" text="Sleep" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#BirdWalk" prefHeight="34.0" prefWidth="117.0" text="Walk" GridPane.rowIndex="2" />
+            <Button layoutY="4.0" mnemonicParsing="false" onAction="#BirdFly" prefHeight="32.0" prefWidth="108.0" text="Fly" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Button layoutX="490.0" layoutY="167.0" mnemonicParsing="false" onAction="#back" prefHeight="53.0" prefWidth="105.0" text="New animal" />

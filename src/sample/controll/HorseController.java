@@ -27,7 +27,10 @@ public class HorseController {
     @FXML
     private AnchorPane rootPane;
     ActionEvent event;
-
+    public double horseWalkDistance = 0;
+    public double horseSleepTime = 0;
+    public String[] horseFoodList = new String[100];
+    public int horseCount;
     @FXML
     public void back(ActionEvent event) throws Exception {
         Parent homeScreen = FXMLLoader.load(getClass().getResource("Pick an animal lol.fxml"));
@@ -81,6 +84,11 @@ public class HorseController {
         alert.setHeaderText("Food Eaten");
         alert.setContentText("I just ate "+food+"!");
         alert.showAndWait();
+        horseFoodList[horseCount] = food;
+        horseCount++;
+        for (int i = 0; i < horseFoodList.length; i++)
+            System.out.println("Element at index " + i +
+                    " : "+ horseFoodList[i]);
     }
     @FXML
     public void HorseSleep(ActionEvent event) throws Exception {
@@ -150,13 +158,22 @@ public class HorseController {
         nameInput.setHeaderText("Time to go on a walk!");
         nameInput.setContentText("Walk distance: (in meters)");
         Optional<String> result = nameInput.showAndWait();
-        double walk = parseDouble(result.get());
-        userBird.walk(walk);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Your horse is done walking");
-        alert.setHeaderText("I'm back!");
-        alert.setContentText("I just walked "+walk+" meters!");
-        alert.showAndWait();
+        double walk = 0;
+        try {
+            walk = parseDouble(result.get());
+            userBird.walk(walk);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Your bird is done walking!");
+            alert.setHeaderText("I'm back!");
+            alert.setContentText("I just walked "+walk+" meters!");
+            alert.showAndWait();
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("NumberFormatException");
+            alert.setContentText("Enter a number, you bone head! \" "+result.get()+"\" is not a number!");
+            alert.showAndWait();
+        }
     }
     @FXML
     public void BirdFly(ActionEvent event) throws Exception {
